@@ -1,0 +1,195 @@
+body{
+    background-color: #FFF;
+}
+
+/* VENTANA MODAL */
+@keyframes animarsuperior {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.contenido-modal {
+    position: block;
+    background-color: #F8F9F9;
+    margin: auto;
+    padding: 50px;
+    width: 30%;
+    border-radius: 5px;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-animation-name: animarsuperior;
+    -webkit-animation-duration: 0.5s;
+    animation-name: animarsuperior;
+    animation-duration: 0.5s;
+
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.contenido-modal p {
+    display: block;
+    text-align: center;
+}
+
+.contenido-modal img{
+    width: 100%;
+}
+
+.contenido-modal i {
+    display: block;
+    width: 100%;
+    font-size: 300%;
+    text-align: center;
+}
+
+.aviso-modal a {
+    color: #FEA82F;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+.aviso-modal a:hover {
+    color: #1E212B;
+    background-size: 100% 2px;
+}
+
+.fa-circle-check{
+    color: #98CA3F;
+}
+
+.fa-circle-xmark{
+    color:#A9281D;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    background-color: #565254;
+}
+
+.nav {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #FEFCFD;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.active {
+    border-bottom: 3px solid black;
+    color: black;
+}
+
+.main_container {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#newemployee_register {
+    display: block;
+    margin: 100px auto;
+    padding: 40px;
+    width: 60%;    
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.employee_data{
+    display: block;
+    margin: 20px 0;
+}
+
+.nav-link:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.employee_data .input-con-boton {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+.employee_data .input-con-boton button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    margin: auto 0;
+    border: none;
+    background-color: transparent;
+}
+
+.employee_data .mostrar{
+    display: block;
+}
+
+.employee_data .ocultar{
+    display: none;
+}
+
+.btn{
+    display: block;
+    margin: 40px auto 20px auto;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #488B49;
+}
+
+#employee_login{
+    display: block;
+    width: 60%;
+    margin: 100px auto 20px auto;
+    padding: 50px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.registrarse{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.employee_data p {
+    font-weight: bold;
+    font-size: 14px;
+    color: #A9281D;
+    text-align: right;
+    margin: 2px 0 5px 0;
+    padding: 0 10px 10px 0;
+    display: none;
+}
