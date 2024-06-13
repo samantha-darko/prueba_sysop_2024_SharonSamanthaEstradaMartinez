@@ -18,7 +18,9 @@ try {
     $foto = fopen($_FILES['foto']['tmp_name'], 'rb');
     $tipoFoto = $_FILES['foto']['type'];
 
-    $datos = new Usuario(0, $nombre, $telefono, $correo, $contra, $fecha_nacimiento, $rfc, $foto, $usertype);
+    $contra_hash = password_hash($contra, PASSWORD_DEFAULT);
+
+    $datos = new Usuario(0, $nombre, $telefono, $correo, $contra_hash, $fecha_nacimiento, $rfc, $foto, $usertype);
     $msj = $api->Agregar($datos);
     echo json_encode($msj);
 } catch (PDOException $e) {

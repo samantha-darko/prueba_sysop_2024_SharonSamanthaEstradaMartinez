@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    <nav class="navbar">
+    <!--<nav class="navbar">
         <ul class="nav right">
             <li class="nav-item">
-                <a href="Inicio.php" class="nav-link">
-                    <i class="fa-solid fa-house"></i> Inicio
+                <a href="IniciarSesion.php" class="nav-link">
+                    <img src="Recursos/logo.png" alt=""> EMPLOYEE GESTOR
                 </a>
             </li>
         </ul>
@@ -31,9 +31,13 @@
                 </a>
             </li>
         </ul>
-    </nav>
+    </nav>-->
 
     <div class="main_container">
+        <div class="containerLogo">
+            <img src="Recursos/logo.png" alt="">
+            <h2>Employee Gestor</h2>
+        </div>
         <form id="employee_login" method="post">
             <div class="employee_data">
 
@@ -62,6 +66,19 @@
         </form>
 
     </div>
+
+    <footer>
+        <div class="container">
+            <h2>Derechos de autor</h2>
+            <p>(c) 2023 Mi Sitio Web.</p>
+            <p>Todos los derechos reservados.</p>
+        </div>
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>Correo electrónico: info@example.com</p>
+            <p>Teléfono: 123-456-7890</p>
+        </div>
+    </footer>
 
     <script src="https://kit.fontawesome.com/854b826ed2.js" crossorigin="anonymous"></script>
 </body>

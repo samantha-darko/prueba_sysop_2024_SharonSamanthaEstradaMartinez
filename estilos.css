@@ -1,4 +1,14 @@
-body{
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
     background-color: #FFF;
 }
 
@@ -54,7 +64,7 @@ body{
     text-align: center;
 }
 
-.contenido-modal img{
+.contenido-modal img {
     width: 100%;
 }
 
@@ -80,14 +90,17 @@ body{
     background-size: 100% 2px;
 }
 
-.fa-circle-check{
+.fa-circle-check {
     color: #98CA3F;
 }
 
-.fa-circle-xmark{
-    color:#A9281D;
+.fa-circle-xmark {
+    color: #A9281D;
 }
 
+/*********************************************************/
+
+/*Estilos para la barra menú*/
 .navbar {
     display: flex;
     width: 100%;
@@ -110,28 +123,8 @@ body{
     font-weight: bold;
 }
 
-.active {
-    border-bottom: 3px solid black;
-    color: black;
-}
-
-.main_container {
-    display: block;
-    width: 50%;
-    margin: 0 auto;
-}
-
-#newemployee_register {
-    display: block;
-    margin: 100px auto;
-    padding: 40px;
-    width: 60%;    
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-.employee_data{
-    display: block;
-    margin: 20px 0;
+.nav-link img {
+    width: 50px;
 }
 
 .nav-link:hover {
@@ -139,11 +132,76 @@ body{
     cursor: pointer;
 }
 
+.active {
+    border-bottom: 3px solid black;
+    color: black;
+}
+
+/*********************************************************/
+
+/*Estilos para el contenedor principal de todas las ventanas*/
+.main_container {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+/*Estilos para el Logotipo que aparece en Login y Registro*/
+.containerLogo {
+    display: flex;
+    width: 100%;
+    margin: 50px auto;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+}
+
+.containerLogo h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.containerLogo img {
+    display: block;
+    width: 200px;
+}
+
+/*********************************************************/
+
+/*Estilos para el formulario de Registrar Usuario*/
+#newemployee_register {
+    display: flex;
+    margin: 50px auto;
+    width: 100%;
+    padding: 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    column-gap: 50px;
+    column-width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#newemployee_register div {
+    width: 100%;
+}
+
+.employee_data {
+    display: block;
+    margin: 20px 0;
+}
+
+/*Estilos para el botón MOSTRAR/OCULTAS de Login y Registro*/
 .employee_data .input-con-boton {
     width: 100%;
     position: relative;
     display: inline-block;
 }
+
 .employee_data .input-con-boton button {
     position: absolute;
     top: 5px;
@@ -153,31 +211,36 @@ body{
     background-color: transparent;
 }
 
-.employee_data .mostrar{
+.employee_data .mostrar {
     display: block;
 }
 
-.employee_data .ocultar{
+.employee_data .ocultar {
     display: none;
 }
 
-.btn{
+/*Estilos para el botón Registrar/Iniciar Sesión*/
+
+.btn {
     display: block;
     margin: 40px auto 20px auto;
     font-weight: bold;
     text-transform: uppercase;
     background-color: #488B49;
+    border-color: transparent;
 }
 
-#employee_login{
+/*Estilos para la ventana de Iniciar Sesion*/
+
+#employee_login {
     display: block;
     width: 60%;
-    margin: 100px auto 20px auto;
+    margin: 50px auto;
     padding: 50px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.registrarse{
+.registrarse {
     display: block;
     width: 100%;
     margin: 0 auto;
@@ -192,4 +255,25 @@ body{
     margin: 2px 0 5px 0;
     padding: 0 10px 10px 0;
     display: none;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    background-color: #565254;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    column-gap: 30px;
+    margin: 0 auto;
+}
+
+footer .container {
+    display: block;
+    color: #FEFCFD;
+    width: 20%;
+    margin: 0;
+    text-align: center;
 }

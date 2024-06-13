@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS usuario (
     foto_perfil			LONGBLOB NOT NULL,
     tipo_usuario 		VARCHAR(2) NOT NULL,
     baja_logica			bit default 0 not null,
+    errores				int default 0 not null,
     
     primary key(id_usuario)
 );
@@ -89,6 +90,41 @@ begin
         ;
         select 1 as codigo, 
         'Baja exitosa' as mensaje;
+    end if;
+end$$
+DELIMITER ;
+
+###---------------------- INICIO SESION USUARIO ----------------------###
+DROP PROCEDURE IF EXISTS sp_usuario_inicio_sesion;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuario_inicio_sesion`(
+in 	sp_email					varchar(250),
+in	sp_contra 					varchar(250)
+)
+SQL SECURITY INVOKER
+begin
+
+	DECLARE EXIT HANDLER FOR 1146 
+		SELECT 1146 as codigo,
+        'Tabla no encontrada' as mensaje;
+    
+	set @temp_contra = (select contra from usuario where baja_logica = 0 and email = sp_email);
+	set @temp_errores = (select errores from usuario where baja_logica = 0 and email = sp_email);
+    if @temp_contra <> '' then
+        if @temp_contra = sp_contra and @temp_errores < 3 then
+			UPDATE usuario SET errores = 0 WHERE id_usuario IN (SELECT id_usuario FROM (SELECT id_usuario FROM usuario WHERE baja_logica = 0 AND email = sp_email) AS temp);
+            select * from usuario where baja_logica = 0 and email = sp_email and contra = sp_contra;
+		else
+			if @temp_errores < 3 then
+				#update usuario set errores = errores + 1 where id_usuario = (select id_usuario from usuario  where baja_logica = 0 and email = sp_email);
+				UPDATE usuario SET errores = errores + 1 WHERE id_usuario IN (SELECT id_usuario FROM (SELECT id_usuario FROM usuario WHERE baja_logica = 0 AND email = sp_email) AS temp);
+                select CONCAT('te quedan ', (3 - (@temp_errores + 1)), ' intentos') as mensaje;
+            else
+				select 'cuenta bloqueada' as mensaje;
+            end if;
+        end if;
+	else
+		select 'correo no registrado' as mensaje;
     end if;
 end$$
 DELIMITER ;

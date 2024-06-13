@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let newemployee_register = document.querySelector("#newemployee_register");
+    let btnRegistro = document.querySelector("#btnRegistro");
 
     let nombre = document.querySelector("#nombre");
     let telefono = document.querySelector("#telefono");
@@ -13,7 +13,7 @@ $(document).ready(function () {
     let mostrar = document.querySelector(".mostrar");
     let ocultar = document.querySelector(".ocultar");
 
-    newemployee_register.addEventListener("submit", function (e) {
+    btnRegistro.addEventListener("click", function (e) {
         e.preventDefault();
         error = false;
         vacio = false;
